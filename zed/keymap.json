@@ -1,0 +1,95 @@
+[
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {},
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-d": "editor::DuplicateLineDown",
+      "cmd-u": "editor::DuplicateLineUp",
+      "cmd-e": ["editor::SelectNext", { "replace_newest": false }],
+      "alt-cmd-down": "editor::MoveLineDown",
+      "alt-cmd-up": "editor::MoveLineUp",
+      "alt-up": "editor::AddSelectionAbove",
+      "alt-down": "editor::AddSelectionBelow",
+      "alt-/": "editor::ToggleComments",
+      "cmd-shift-/": "editor::ToggleComments",
+      "alt-shift-s": "editor::FindAllReferences",
+      "alt-shift-r": "editor::RevealInFileManager",
+      "cmd-shift-d cmd-shift-i": "editor::OpenSelectedFilename",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-p": "command_palette::Toggle",
+      "cmd-shift-p": "command_palette::Toggle",
+      "alt-tab": "workspace::ToggleRightDock",
+      "cmd-shift-w": "workspace::CloseInactiveTabsAndPanes",
+      "cmd-r": "workspace::Reload",
+      "alt-f": "pane::DeploySearch",
+      "alt-j": "workspace::NewTerminal",
+      "cmd-shift-j": "workspace::NewTerminal",
+      "alt-[": "workspace::NewTerminal",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-cmd-left": "pane::GoBack",
+      "ctrl-cmd-right": "pane::GoForward",
+      "alt-shift-w": [
+        "pane::CloseOtherItems",
+        {
+          "close_pinned": false,
+        },
+      ],
+      "alt-w": [
+        "pane::CloseActiveItem",
+        {
+          "close_pinned": false,
+        },
+      ],
+    },
+  },
+  {
+    "context": "(GitPanel && ChangesList)",
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus",
+    },
+  },
+  {
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus",
+      "cmd-shift-s": "workspace::SaveWithoutFormat",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-shift-j": "pane::SplitRight",
+    },
+  },
+  {
+    "bindings": {
+      "ctrl-shift-tab": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "((Editor && mode == full) && edit_prediction)",
+    "bindings": {
+      "alt-shift-tab": null,
+    },
+  },
+  {
+    "bindings": {
+      "cmd-o": null,
+    },
+  },
+  {
+    "bindings": {
+      "cmd-o": "file_finder::Toggle",
+    },
+  },
+]
