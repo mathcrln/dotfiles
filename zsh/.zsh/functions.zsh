@@ -1,6 +1,16 @@
 # Sail test with filter
 stf() {
-  sail artisan test --filter="$1"
+  ./vendor/bin/sail artisan test --filter="$1"
+}
+
+sdev() {
+  concurrently -k \
+    -c "#93c5fd,#c4b5fd,#d4d4d8,#fdba74" \
+    "pnpm run dev" \
+    "./vendor/bin/sail artisan queue:listen --tries=1" \
+    "./vendor/bin/sail artisan pail" \
+    "./vendor/bin/sail artisan schedule:work" \
+    --names=vite,queue,logs,scheduler
 }
 
 # Convert opus files to mp3

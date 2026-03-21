@@ -18,11 +18,20 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+# =====================================================
+#  PLUGINS
+# =====================================================
 
-# --- Oh My Zsh ---
-export ZSH="$HOME/.oh-my-zsh"
-plugins=(git zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
+if [[ ! -d "$HOME/.zsh/zsh-syntax-highlighting" ]]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh/zsh-syntax-highlighting"
+fi
+
+if [[ ! -d "$HOME/.zsh/zsh-autosuggestions" ]]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git "$HOME/.zsh/zsh-autosuggestions"
+fi
+
+source <(fzf --zsh)
+
 # --- Tools & Environment ---
 eval "$(starship init zsh)"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
