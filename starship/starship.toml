@@ -1,6 +1,5 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
 command_timeout = 300
+add_newline = false
 
 [git_metrics]
 disabled = false
@@ -14,8 +13,11 @@ disabled = true
 [gcloud]
 disabled = true
 
-[package]
+[character]
+success_symbol = '[➜](bold green)'
+
+[docker_context]
 disabled = true
 
 [time]
-disabled = false
+disabled = true

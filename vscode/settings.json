@@ -1,0 +1,156 @@
+{
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports.ts": "always",
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+    "source.removeUnusedImports": "explicit",
+    "source.sortImports": "explicit"
+  },
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.detectIndentation": false,
+  "editor.fontFamily": "\"JetBrains Mono\", \"Fira Code\", Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": true,
+
+  "files.associations": {
+    "*.mdx": "markdown"
+  },
+  "files.autoSaveWhenNoErrors": true,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  },
+  "tailwind-fold.autoFold": false,
+
+  "typescript.experimental.updateImportsOnPaste": true,
+  "typescript.preferences.organizeImports": {},
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.experimental.updateImportsOnPaste": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  "astro.content-intellisense": true,
+  "astro.updateImportsOnFileMove.enabled": true,
+
+  "npm.packageManager": "pnpm",
+  "notebook.formatOnSave.enabled": true,
+
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.ignoreRebaseWarning": true,
+  "git.openRepositoryInParentFolders": "always",
+  "git.replaceTagsWhenPull": true,
+  "githubPullRequests.fileListLayout": "tree",
+  "gitlens.launchpad.indicator.enabled": false,
+  "gitlens.views.branches.branches.layout": "list",
+
+  "github.copilot.enable": {
+    "*": false
+  },
+  "chat.agent.enabled": true,
+
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.useTerminal": true,
+
+  "terminal.external.osxExec": "iTerm 2.app",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontFamily": "'FiraMono Nerd Font Mono'",
+
+  "window.commandCenter": false,
+  "window.nativeTabs": true,
+  "window.systemColorTheme": "auto",
+
+  "workbench.activityBar.location": "hidden",
+  "workbench.layoutControl.enabled": false,
+  "workbench.panel.showLabels": false,
+  "workbench.iconTheme": "vira-icons-carbon",
+  "workbench.preferredHighContrastLightColorTheme": "Visual Studio Light",
+
+"zenMode.showTabs": "none",
+"terminal.integrated.env.osx": {
+    "Q_NEW_SESSION": "1"
+},
+"chat.extensionUnification.enabled": false,
+"workbench.colorTheme": "Vira Carbon",
+"workbench.colorCustomizations": {
+    "[Vira*]": {
+        "statusBar.debuggingBackground": "#5393FF33",
+        "statusBar.debuggingForeground": "#5393FF",
+        "toolbar.activeBackground": "#5393FF26",
+        "button.background": "#5393FF",
+        "button.hoverBackground": "#5393FFcc",
+        "extensionButton.separator": "#5393FF33",
+        "extensionButton.background": "#5393FF14",
+        "extensionButton.foreground": "#5393FF",
+        "extensionButton.hoverBackground": "#5393FF33",
+        "extensionButton.prominentForeground": "#5393FF",
+        "extensionButton.prominentBackground": "#5393FF14",
+        "extensionButton.prominentHoverBackground": "#5393FF33",
+        "activityBarBadge.background": "#5393FF",
+        "activityBar.activeBorder": "#5393FF",
+        "activityBarTop.activeBorder": "#5393FF",
+        "list.inactiveSelectionIconForeground": "#5393FF",
+        "list.activeSelectionForeground": "#5393FF",
+        "list.inactiveSelectionForeground": "#5393FF",
+        "list.highlightForeground": "#5393FF",
+        "sash.hoverBorder": "#5393FF80",
+        "list.activeSelectionIconForeground": "#5393FF",
+        "scrollbarSlider.activeBackground": "#5393FF80",
+        "editorSuggestWidget.highlightForeground": "#5393FF",
+        "textLink.foreground": "#5393FF",
+        "progressBar.background": "#5393FF",
+        "pickerGroup.foreground": "#5393FF",
+        "tab.activeBorder": "#5393FF",
+        "tab.activeBorderTop": "#5393FF00",
+        "tab.unfocusedActiveBorder": "#5393FF",
+        "tab.unfocusedActiveBorderTop": "#5393FF00",
+        "tab.activeModifiedBorder": "#5393FF00",
+        "notificationLink.foreground": "#5393FF",
+        "editorWidget.resizeBorder": "#5393FF",
+        "editorWidget.border": "#5393FF",
+        "settings.modifiedItemIndicator": "#5393FF",
+        "panelTitle.activeBorder": "#5393FF",
+        "breadcrumb.activeSelectionForeground": "#5393FF",
+        "menu.selectionForeground": "#5393FF",
+        "menubar.selectionForeground": "#5393FF",
+        "editor.findMatchBorder": "#5393FF",
+        "selection.background": "#5393FF40",
+        "statusBarItem.remoteBackground": "#5393FF14",
+        "statusBarItem.remoteHoverBackground": "#5393FF",
+        "statusBarItem.remoteForeground": "#5393FF",
+        "notebook.inactiveFocusedCellBorder": "#5393FF80",
+        "chat.slashCommandForeground": "#5393FF",
+        "chat.avatarForeground": "#5393FF",
+        "activityBarBadge.foreground": "#000000",
+        "button.foreground": "#000000",
+        "statusBarItem.remoteHoverForeground": "#000000"
+    }
+},
+"viraTheme.accent": "Blue"
+}
