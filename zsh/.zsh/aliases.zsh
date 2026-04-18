@@ -18,6 +18,7 @@ alias gsa="git stash apply"
 alias gdn="git diff --name-only"
 alias nah="git reset --hard && git clean -df"
 alias gwhen="git log -S"
+alias glog="git log --oneline --graph --decorate -20"
 
 # --- Docker ---
 alias dcb="docker compose build"
