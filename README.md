@@ -13,17 +13,48 @@ curl -fsSL https://raw.githubusercontent.com/mathcrln/dotfiles/main/scripts/boot
 
 Then install the GUI apps (see bottom). That's it.
 
+## Existing machine (first activation)
+
+If Nix, Home Manager, and this repo are already present (i.e. you're migrating,
+not starting fresh), skip `bootstrap.sh` and just activate the config once:
+
+```bash
+# -b pre-hm backs up any pre-existing files (e.g. an old ~/.zshrc) to *.pre-hm
+home-manager switch -b pre-hm --flake ~/Developer/dotfiles#mathcrln
+```
+
+Verify, then delete the `*.pre-hm` backups once happy. To roll back:
+`home-manager generations` and activate a previous one.
+
 ## Daily use
 
-Edit any file in `modules/` or `configs/`, then:
+Edit a file in the repo, then apply:
 
 ```bash
 home-manager switch --flake ~/Developer/dotfiles
 ```
 
-> **Don't edit `~/.zshrc` directly.** Home Manager generates it (a symlink into
-> the nix store) and overwrites it on every `switch`. Aliases live in
-> `modules/shell.nix`, shell functions in `configs/functions.zsh`.
+> **Never edit `~/.zshrc` directly.** Home Manager generates it (a symlink into
+> the nix store) and overwrites it on every `switch`.
+
+### Where to change things
+
+| Want to change… | Edit this | Example |
+| --- | --- | --- |
+| Shell aliases | `modules/shell.nix` → `shellAliases` | `gs = "git status";` |
+| Shell functions | `configs/functions.zsh` (inlined verbatim) | add a new `foo() { ... }` |
+| CLI packages | `modules/packages.nix` → `home.packages` | add `jq` to the list |
+| Tools w/ shell init | `modules/tools.nix` | fzf, zoxide, ripgrep, gh |
+| Prompt | `configs/starship.toml` | edit TOML directly |
+| Git config | `modules/git.nix` | aliases, user, ignores |
+| Env vars / PATH | `home.nix` → `sessionVariables` / `sessionPath` | `EDITOR`, PNPM_HOME |
+| Editor/app config | `configs/` + `home.file` in `home.nix` | zed keymap, VS Code settings |
+
+After any edit: `home-manager switch --flake ~/Developer/dotfiles`, then open a
+new shell. Find a package name with `nix search nixpkgs <name>`.
+
+To update everything to the latest pinned versions:
+`nix flake update` (in the repo) then `home-manager switch …`.
 
 ## Structure
 
