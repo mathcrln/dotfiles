@@ -57,7 +57,8 @@
       hosts = "sudo code /etc/hosts";
 
       # --- Shell ---
-      sourcez = "source ~/.zshrc";
+      hms = "home-manager switch --flake ~/Developer/dotfiles";
+      sourcez = "exec zsh";
       hs = "grep $HISTFILE -e";
 
       # --- PHP / Laravel Sail ---

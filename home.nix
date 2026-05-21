@@ -21,6 +21,7 @@
   home.sessionVariables = {
     PNPM_HOME = "$HOME/Library/pnpm";
     EDITOR = "zed";
+    _ZO_DOCTOR = "0";
   };
 
   home.file = {
