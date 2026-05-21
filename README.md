@@ -1,21 +1,37 @@
-# Configuration files (.dotfiles)
-[![Author](https://img.shields.io/badge/author-mathcrln-FEA83E?style=flat-square)](https://github.com/mathcrln)
-[![Stars](https://img.shields.io/github/stars/mathcrln/mathcrln.com?color=FEA83E&style=flat-square)](https://github.com/mathcrln/mathcrln.com/stargazers)
+# Dotfiles
 
-Personal dotfiles with modern shell tooling, optimized for web development and Software Engineering.
+Declarative macOS dev environment via Nix + Home Manager.
 
-## Tools
-- zsh
-- pnpm
-- PHP / Composer
-- zoxide
-- fnm
+## Fresh machine
 
+One command — installs Nix, enables flakes, clones this repo to
+`~/Developer/dotfiles`, and builds + activates the whole environment:
 
-## Why publish my .dotfiles?
+```bash
+curl -fsSL https://raw.githubusercontent.com/mathcrln/dotfiles/main/scripts/bootstrap.sh | bash
+```
 
-I do it both as a way to backup/track history of my configuration files and as a way to share them with others.
+Then install the GUI apps (see bottom). That's it.
 
-## Resources & Inspirations
-- 
-- [Freek Murze's dotfiles](https://github.com/freekmurze/dotfiles/) ([uses](https://freek.dev/uses))
+## Daily use
+
+Edit any file in `modules/` or `configs/`, then:
+
+```bash
+home-manager switch --flake ~/Developer/dotfiles
+```
+
+> **Don't edit `~/.zshrc` directly.** Home Manager generates it (a symlink into
+> the nix store) and overwrites it on every `switch`. Aliases live in
+> `modules/shell.nix`, shell functions in `configs/functions.zsh`.
+
+## Structure
+
+- `flake.nix` / `flake.lock` — pinned nixpkgs + home-manager; the entry the flake builds
+- `home.nix` — home-manager config root, imports modules
+- `modules/` — Nix-managed config (packages, programs, settings)
+- `configs/` — raw config files for tools that want them (TOML, JSON, etc.)
+- `scripts/bootstrap.sh` — fresh-machine install (one command)
+
+> GUI apps (OrbStack, MacWhisper, MonitorControl, 1Password) are installed
+> manually via their own installers — Nix doesn't manage macOS `.app` bundles.
