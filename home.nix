@@ -16,6 +16,7 @@
   home.sessionPath = [
     "$HOME/.composer/vendor/bin"
     "$HOME/Library/pnpm"
+    "$HOME/.local/bin"
   ];
 
   home.sessionVariables = {

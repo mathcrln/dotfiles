@@ -67,7 +67,7 @@
       sci = "sail composer install";
       scu = "sail composer update";
       sd = "sail composer dev";
-      stp = "sail artisan test -p";
+      stp = "sail artisan test -p=4";
       spi = "sail pnpm i";
       spid = "sail pnpm i -D";
       srd = "sail pnpm dev";

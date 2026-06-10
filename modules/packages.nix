@@ -1,14 +1,30 @@
 { pkgs, ... }:
 
+let
+  # Laravel-ready PHP: default extensions + the ones Laravel/Horizon/queues need.
+  php = pkgs.php.withExtensions ({ enabled, all }:
+    enabled ++ (with all; [
+      bcmath
+      gd
+      intl
+      pdo_mysql
+      pdo_pgsql
+      pcntl
+      redis
+      sodium
+      zip
+    ]));
+in
 {
-  home.packages = with pkgs; [
+  home.packages = [
+    php
+    php.packages.composer
+  ] ++ (with pkgs; [
     bat
     eza
     tree
     httpie
     mkcert
     ffmpeg
-    php
-    phpPackages.composer
-  ];
+  ]);
 }
