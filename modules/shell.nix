@@ -57,7 +57,7 @@
       hosts = "sudo code /etc/hosts";
 
       # --- Shell ---
-      hms = "home-manager switch --flake ~/Developer/dotfiles";
+      hms = "home-manager switch --flake ~/Developer/dotfiles#mathcrln";
       sourcez = "exec zsh";
       hs = "grep $HISTFILE -e";
 
