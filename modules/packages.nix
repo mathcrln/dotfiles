@@ -2,7 +2,7 @@
 
 let
   # Laravel-ready PHP: default extensions + the ones Laravel/Horizon/queues need.
-  php = pkgs.php.withExtensions ({ enabled, all }:
+  php = pkgs.php85.withExtensions ({ enabled, all }:
     enabled ++ (with all; [
       bcmath
       gd

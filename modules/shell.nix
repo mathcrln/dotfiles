@@ -58,7 +58,7 @@
 
       # --- Shell ---
       hms = "home-manager switch --flake ~/Developer/dotfiles#mathcrln";
-      sourcez = "exec zsh";
+      sourcez = "unset __HM_SESS_VARS_SOURCED && exec zsh";
       hs = "grep $HISTFILE -e";
 
       # --- PHP / Laravel Sail ---
